@@ -26,7 +26,7 @@ class Ustoz(models.Model):
         ('boshqa', 'Boshqa'),
     ]
 
-    DARJA_CHOICES = [
+    DARAJA_CHOICES = [
         ('Bakalavr', 'Bakalavr'),
         ('Magistr', 'Magistr'),
     ]
@@ -34,7 +34,7 @@ class Ustoz(models.Model):
     ism = models.CharField(max_length=100)
     jins = models.CharField(max_length=10, choices=JINS_CHOICES)
     yosh = models.IntegerField()
-    daraja = models.CharField(max_length=10, choices=DARJA_CHOICES)
+    daraja = models.CharField(max_length=10, choices=DARAJA_CHOICES)
     fan = models.ForeignKey(Fan, on_delete=models.CASCADE)
 
     def __str__(self):
