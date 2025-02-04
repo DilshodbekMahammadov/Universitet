@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Universitet | Yonalishlar | Tahrirlash</title>
+</head>
+<body>
+    <h1>{{ yonalish.nom }} ma'lumotlarini tahrirlash</h1>
+    <hr>
+    <form method="post">
+        <label>Nom: </label>
+        <input type="text" name="nom" value="{{ yonalish.nom }}" required>
+        <br><br>
+        <label>Yonalish: </label>
+        <input type="text" name="yonalish" value="{{ yonalish.yonalish }}">
+        <br><br>
+        <label>Asosiy: </label>
+        <input type="checkbox" name="asosiy" value="{{ yonalish.asosiy }}">
+        <button>Tasdiqlash</button>
+    </form>
+</body>
+</html>

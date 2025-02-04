@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Universitet | Ustozlar | Tahrirlash</title>
+</head>
+<body>
+    <h1>{{ ustoz.ism }} ma'lumotlarini tahrirlash</h1>
+    <hr>
+    <form method="post">
+        <label>Ism: </label>
+        <input type="text" name="ism" value="{{ ustoz.ism }}" required>
+        <br><br>
+        <label>Daraja: </label>
+        <input type="text" name="daraja" value="{{ ustoz.daraja }}">
+        <br><br>
+        <label>Yosh: </label>
+        <input type="number" name="yosh" value="{{ ustoz.yosh }}" required>
+        <br><br>
+        <label>Fan: </label>
+        <select name="fan_id">
+            <option value="{{ ustoz.fan.id }}">{{ ustoz.fan.ism }}</option></select>
+        <label>Jins: </label>
+        <select name="jins">
+            <option value="erkak">Erkak</option>
+            <option value="ayol">Ayol</option>
+        </select>
+        <button>Tasdiqlash</button>
+    </form>
+</body>
+</html>

@@ -17,15 +17,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from mainApp.views import home_view, fanlar_view, yonalishlar_view, ustozlar_view, yonalish_qoshish_view, \
-    fanlar_qoshish_view, ustoz_qoshish_view
+from mainApp.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home_view),
-    path('fanlar/', fanlar_view),
-    path('yonalishlar/', yonalishlar_view),
-    path('ustozlar/', ustozlar_view),
+    path('',home_view,name='home'),
+    path('fanlar/', fanlar_view, name='fanlar'),
+    path("fanlar/<int:pk>/tahrirlash/", fanlar_update_view),
+    path("yonalishlar/<int:pk>/tahrirlash/", yonalishlar_update_view),
+    path("ustozlar/<int:pk>/tahrirlash/", ustozlar_update_view),
+    path('yonalishlar/', yonalishlar_view, name='yonalishlar'),
+    path('ustozlar/', ustozlar_view, name='ustozlar'),
     path('yonalish_qoshish/', yonalish_qoshish_view),
     path('fan_qoshish/', fanlar_qoshish_view),
     path('ustoz_qoshish/', ustoz_qoshish_view, name='ustoz_qoshish')

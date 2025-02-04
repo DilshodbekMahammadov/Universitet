@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Universitet | Fanlar | Tahrirlash</title>
+</head>
+<body>
+    <h1>{{ fan.nom }} ma'lumotlarini tahrirlash</h1>
+    <hr>
+    <form method="post">
+        <label>Nom: </label>
+        <input type="text" name="nom" value="{{ fan.nom }}" required>
+        <br><br>
+        <label>Aktiv: </label>
+        <input type="checkbox" name="aktiv" value="{{ fan.aktiv }}">
+        <button>Tasdiqlash</button>
+    </form>
+</body>
+</html>
