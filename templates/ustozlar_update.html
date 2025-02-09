@@ -8,18 +8,28 @@
     <h1>{{ ustoz.ism }} ma'lumotlarini tahrirlash</h1>
     <hr>
     <form method="post">
+        {% csrf_token %}
         <label>Ism: </label>
         <input type="text" name="ism" value="{{ ustoz.ism }}" required>
         <br><br>
-        <label>Daraja: </label>
-        <input type="text" name="daraja" value="{{ ustoz.daraja }}">
+        <label>Daraja:</label>
+        <select name="daraja">
+            <option>Bakalavr</option>
+            <option>Magistr</option>
+            <option>Dotsent</option>
+          <option>Professor</option>
+        </select>
         <br><br>
         <label>Yosh: </label>
         <input type="number" name="yosh" value="{{ ustoz.yosh }}" required>
         <br><br>
         <label>Fan: </label>
-        <select name="fan_id">
-            <option value="{{ ustoz.fan.id }}">{{ ustoz.fan.ism }}</option></select>
+        <select name="fan_id" required>
+            <option value="fan.id">{{ustoz.fan.nom}}</option>
+            {% for fan in fanlar %}
+                <option value="{{ fan.id }}">{{ fan.nom }}</option>
+            {% endfor %}
+        </select>
         <label>Jins: </label>
         <select name="jins">
             <option value="erkak">Erkak</option>

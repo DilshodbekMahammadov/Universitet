@@ -10,11 +10,9 @@
     <br><br>
     <a href="/">Bosh sahifa</a>
     <hr>
-
-    {% for ustoz in ustozlar %}
-        <p>{{ forloop.counter }}.
-            {{ ustoz.nom }}
-        </p>
-    {% endfor %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+    </form>
 </body>
 </html>
